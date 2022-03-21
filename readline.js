@@ -1,5 +1,5 @@
 //^Readline is a module of Node.js allows the reading of input stream line by line
-
+const colors = require('colors');
 //!GET READLINE MODULE
 const readline = require('readline');
 
@@ -27,9 +27,9 @@ rl.on('line', (answer) => {
 }); */
 
 //~listening function
-/* rl.on('line', (write) => {
-    console.log(`I know what you are writing ! It's [ "${write}" ] `)
-}); */
+rl.on('line', (write) => {
+    console.log(`I know what you are writing ! It's [ "${write}" ] `.bgMagenta.black)
+});
 
 //~pause event
 //
@@ -44,11 +44,11 @@ rl.on('line', (answer) => {
 }); */
 
 //~SIGINT ctrl+c -> don't know what it means 
-rl.on('SIGINT', () => {
+/* rl.on('SIGINT', () => {
 	rl.question('Exit (y or n)? ', (input) => {
 	if (input.match(/^y(es)?$/i)) { rl.pause(); }
 	});
-});
+}); */
 
 //~SIGCONT : cet événement est invoqué lorsqu'un processus qui a été envoyé en arrière-plan à l'aide de SIGTSTP
 //~SIGTSTP est à nouveau ramené au processus en cours d'exécution
